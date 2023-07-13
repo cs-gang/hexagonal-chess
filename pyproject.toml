@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "hexagonal-chess"
+version = "0.1.0"
+description = ""
+authors = ["Anand Krishna <anand2312@proton.me>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "hexchess"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pygame-ce = "^2.3.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.0.278"
+pytest = "^7.4.0"
+black = "^23.7.0"
+pre-commit = "^3.3.3"
+
+[tool.ruff]
+select = [
+    "E",
+    "F",
+    "UP"
+]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "*.lock",
+]
+src = ["hexchess"]
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
